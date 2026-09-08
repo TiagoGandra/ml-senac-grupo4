@@ -13,7 +13,7 @@ files_bem/
 !dados/*.csv
 
 # Ambiente local (VS Code) — não versionar, cada um cria o seu com requirements.txt
-.venv/
+venv/
 
 # Artefatos de execução do notebook
 *.pkl
