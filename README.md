@@ -72,18 +72,62 @@ O Colab já vem com quase todas as bibliotecas prontas; se algo faltar (normalme
 
 ### Local, com VS Code
 
-1. Crie o ambiente virtual do projeto (uma vez só):
+O ambiente virtual não é versionado (está no `.gitignore`) — cada membro cria o seu localmente a partir do `requirements.txt`.
+
+#### 🐧 Linux / macOS
+
+1. **Crie o ambiente virtual na raiz do projeto:**
    ```bash
    python3 -m venv .venv
-   ./.venv/bin/pip install -r requirements.txt
    ```
-2. Registre o kernel Jupyter:
-   ```bash
-   ./.venv/bin/python -m ipykernel install --user --name=mineracao-eleitoral-2026 --display-name="Python (mineração eleitoral 2026)"
-   ```
-3. Abra a pasta do projeto no VS Code, abra qualquer `.ipynb` e, no canto superior direito, selecione o kernel **"Python (mineração eleitoral 2026)"** (ou o interpretador `.venv` do projeto, que o VS Code detecta automaticamente).
 
-O `.venv/` não é versionado (está no `.gitignore`) — cada pessoa cria o seu localmente a partir do `requirements.txt`.
+2. **Ative o ambiente virtual e instale as dependências:**
+   ```bash
+   source .venv/bin/activate
+   pip install -r requirements.txt
+   ```
+
+3. **Registre o kernel Jupyter:**
+   ```bash
+   python -m ipykernel install --user --name=mineracao-eleitoral-2026 --display-name="Python (mineração eleitoral 2026)"
+   ```
+
+---
+
+#### 🪟 Windows
+
+1. **Crie o ambiente virtual na raiz do projeto:**
+   ```powershell
+   python -m venv .venv
+   ```
+
+2. **Ative o ambiente virtual e instale as dependências:**
+   - No **PowerShell**:
+     ```powershell
+     # Se receber erro de execução de scripts, execute antes:
+     # Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+     .venv\Scripts\Activate.ps1
+     pip install -r requirements.txt
+     ```
+   - No **Prompt de Comando (CMD)**:
+     ```cmd
+     .venv\Scripts\activate.bat
+     pip install -r requirements.txt
+     ```
+
+3. **Registre o kernel Jupyter:**
+   ```powershell
+   python -m ipykernel install --user --name=mineracao-eleitoral-2026 --display-name="Python (mineração eleitoral 2026)"
+   ```
+
+---
+
+#### ⚙️ No VS Code
+
+1. Abra a pasta do projeto no VS Code (`Arquivo > Abrir Pasta...` ou pelo terminal com `code .`).
+2. Abra qualquer notebook (`.ipynb`).
+3. No canto superior direito do notebook, clique no seletor de kernel (**Select Kernel**).
+4. Selecione **Python Environments...** apontando para o `.venv` criado (ou em **Jupyter Kernel...** selecione **"Python (mineração eleitoral 2026)"**).
 
 ## Fonte dos dados
 
