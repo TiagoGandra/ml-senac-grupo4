@@ -11,6 +11,7 @@ Projeto de disciplina: da análise descritiva à detecção de anomalias, usando
 | 2 | `02_clusterizacao.ipynb` | K-Means, DBSCAN, hierárquico (hclust) e Bisecting K-Means |
 | 3 | `03_regras_associacao.ipynb` | Regras de associação (Apriori) |
 | 4 | `04_deteccao_anomalias.ipynb` | Detecção de anomalias |
+| Extra | `extra_despesas.ipynb` | Análise de Despesas Eleitorais (Pagas e Contratadas), Clusterização com Radar e Regras Socioprofissionais |
 
 Cada fase parte do resultado da anterior — todas leem/escrevem em `dados/`, então não é preciso repetir a Fase 0 dentro de cada notebook.
 
@@ -43,6 +44,13 @@ Se precisar atualizar para uma versão mais recente publicada pelo TSE:
    - `https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2026.zip`
 2. Substitua os arquivos em `dados/` (mesmos nomes) e rode a Fase 0 de novo.
 3. Confira o `DT_GERACAO`/`HH_GERACAO` que a Fase 0 imprime, e faça o commit do novo zip + do novo `dados/*.csv` juntos — assim quem der `git pull` sabe exatamente qual snapshot está usando.
+
+### Prestação de Contas Eleitorais (Fase Extra)
+
+Para a análise de despesas eleitorais na **Fase Extra (`extra_despesas.ipynb`)**, é necessária a base de prestação de contas de candidatos. Devido ao limite de tamanho de arquivos do GitHub (>100 MB), o arquivo `dados/prestacao_de_contas_eleitorais_candidatos_2026.zip` **não** é versionado diretamente no Git.
+
+- **Fonte oficial para download:** [Portal de Dados Abertos do TSE — Prestação de Contas Eleitorais 2026](https://dadosabertos.tse.jus.br/dataset/prestacao-de-contas-eleitorais-2026)
+- Salve o arquivo baixado como `dados/prestacao_de_contas_eleitorais_candidatos_2026.zip`.
 
 ## Sobre "congelar" a versão dos dados
 

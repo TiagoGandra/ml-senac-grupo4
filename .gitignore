@@ -4,6 +4,7 @@
 # Qualquer OUTRO .zip (ex: extraído por engano fora de dados/) continua ignorado.
 *.zip
 !dados/*.zip
+dados/prestacao_de_contas_eleitorais_candidatos_2026.zip
 files_cand/
 files_bem/
 
