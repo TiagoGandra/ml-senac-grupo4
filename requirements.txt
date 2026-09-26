@@ -12,6 +12,7 @@ seaborn>=0.13
 scikit-learn>=1.4
 scipy>=1.11
 mlxtend>=0.23
+plotly>=5.0
 
 # Só necessário para rodar localmente (Colab já tem um kernel próprio)
 ipykernel>=6.29
