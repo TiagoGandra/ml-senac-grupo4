@@ -6,21 +6,21 @@ Projeto de disciplina: da análise descritiva à detecção de anomalias, usando
 
 | Fase | Notebook | O que faz |
 |---|---|---|
-| 0 | `00_preparacao_dados.ipynb` | Lê os zips do TSE (baixados manualmente para `dados/`), filtra por cargo/UF, limpa e salva um dataset pronto em `dados/` |
-| 1 | `01_analise_descritiva.ipynb` | Exploração ampla e sem viés: distribuições, outliers, proporções e dispersão de todas as variáveis relevantes (candidatos e bens) |
-| 2 | `02_clusterizacao.ipynb` | K-Means, DBSCAN, hierárquico (hclust) e Bisecting K-Means |
-| 3 | `03_regras_associacao.ipynb` | Regras de associação (Apriori) |
+| 0 | `00_preparacao_dados.ipynb` | Lê os zips do TSE (candidatos, bens e prestação de contas de despesas), integra via JOIN, limpa e salva o dataset pronto em `dados/` |
+| 1 | `01_analise_descritiva.ipynb` | Exploração ampla e sem viés: distribuições, outliers, dispersão (bens vs despesas contratadas) e comparações por UF |
+| 2 | `02_clusterizacao.ipynb` | K-Means (baseline V2 e Versão 3 com 4 drivers incluindo Despesas Contratadas), radar polar, matriz de transição, Bisecting K-Means e DBSCAN |
+| 3 | `03_regras_associacao.ipynb` | Regras de associação (Apriori) com os 4 arquétipos da Fase 2, faixas de despesa contratada e grafos PyVis |
 | 4 | `04_deteccao_anomalias.ipynb` | Detecção de anomalias |
-| Extra | `extra_despesas.ipynb` | Análise de Despesas Eleitorais (Pagas e Contratadas), Clusterização com Radar e Regras Socioprofissionais |
 
 Cada fase parte do resultado da anterior — todas leem/escrevem em `dados/`, então não é preciso repetir a Fase 0 dentro de cada notebook.
 
-### Cronograma de liberação
+### Status das Fases (Grupo 4 — Deputado Federal Nordeste)
 
-- ✅ **Fase 0 e Fase 1** — liberadas.
-- ⏳ Fase 2 (clusterização) — em breve.
-- ⏳ Fase 3 (regras de associação) — em breve.
-- ⏳ Fase 4 (detecção de anomalias) — em breve.
+- ✅ **Fase 0** (`00_preparacao_dados.ipynb`) — Preparação, unificação relacional e despesas contratadas.
+- ✅ **Fase 1** (`01_analise_descritiva.ipynb`) — Análise descritiva, assimetria patrimonial e gastos por UF.
+- ✅ **Fase 2** (`02_clusterizacao.ipynb`) — K-Means 4 drivers (com despesas contratadas), radar polar e matriz de transição.
+- ✅ **Fase 3** (`03_regras_associacao.ipynb`) — Regras de associação (Apriori), faixas de gastos e redes PyVis.
+- ✅ **Fase 4** (`04_deteccao_anomalias.ipynb`) — Detecção de anomalias com Isolation Forest (visão global e intra-cluster).
 
 ### Professor x alunos
 
@@ -45,9 +45,9 @@ Se precisar atualizar para uma versão mais recente publicada pelo TSE:
 2. Substitua os arquivos em `dados/` (mesmos nomes) e rode a Fase 0 de novo.
 3. Confira o `DT_GERACAO`/`HH_GERACAO` que a Fase 0 imprime, e faça o commit do novo zip + do novo `dados/*.csv` juntos — assim quem der `git pull` sabe exatamente qual snapshot está usando.
 
-### Prestação de Contas Eleitorais (Fase Extra)
+### Prestação de Contas Eleitorais (Fase 0)
 
-Para a análise de despesas eleitorais na **Fase Extra (`extra_despesas.ipynb`)**, é necessária a base de prestação de contas de candidatos. Devido ao limite de tamanho de arquivos do GitHub (>100 MB), o arquivo `dados/prestacao_de_contas_eleitorais_candidatos_2026.zip` **não** é versionado diretamente no Git.
+Para a análise de despesas eleitorais na **Fase 0 em diante**, é necessária a base de prestação de contas de candidatos. Devido ao limite de tamanho de arquivos do GitHub (>100 MB), o arquivo `dados/prestacao_de_contas_eleitorais_candidatos_2026.zip` **não** é versionado diretamente no Git.
 
 - **Fonte oficial para download:** [Portal de Dados Abertos do TSE — Prestação de Contas Eleitorais 2026](https://dadosabertos.tse.jus.br/dataset/prestacao-de-contas-eleitorais-2026)
 - Salve o arquivo baixado como `dados/prestacao_de_contas_eleitorais_candidatos_2026.zip`.
