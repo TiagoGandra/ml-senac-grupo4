@@ -11,6 +11,7 @@ Projeto de disciplina: da análise descritiva à detecção de anomalias, usando
 | 2 | `02_clusterizacao.ipynb` | K-Means, DBSCAN, hierárquico (hclust) e Bisecting K-Means |
 | 3 | `03_regras_associacao.ipynb` | Regras de associação (Apriori) |
 | 4 | `04_deteccao_anomalias.ipynb` | Detecção de anomalias |
+| 5 | `05_associacao_clusters_resultado.ipynb` | Associação entre clusters e resultado eleitoral (qui-quadrado, V de Cramér, permutação) |
 | Extra | `extra_despesas.ipynb` | Análise de Despesas Eleitorais (Pagas e Contratadas), Clusterização com Radar e Regras Socioprofissionais |
 
 Cada fase parte do resultado da anterior — todas leem/escrevem em `dados/`, então não é preciso repetir a Fase 0 dentro de cada notebook.
